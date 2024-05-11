@@ -38,7 +38,7 @@ lista = list_files_recursive(folder_path)
 
 for i in range(len(lista)):
     tmp = lista[i].split('\\')[-1].split('(')[0].split('.')[0]
-    ct = re.sub(r'[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣0-9 ]', '', tmp)
+    ct = re.sub(r'[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣0-9 ,.\'~\-_&+<>]', '', tmp)
     if ct != '' :
         e = translator.translate(tmp, dest = 'en')
         e = e.text.replace('"',"'")
